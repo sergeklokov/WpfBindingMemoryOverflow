@@ -1,6 +1,15 @@
 <Solution>
   <Folder Name="/Solution Items/">
+    <File Path="CompareLeakyModel.cs.png" />
+    <File Path="CompareLeakyTile.xaml.png" />
+    <File Path="CompareMainWindow.xaml.cs.1.png" />
+    <File Path="CompareMainWindow.xaml.cs.2.png" />
+    <File Path="CompareMainWindow.xaml.png" />
     <File Path="ReadMe.md" />
+    <File Path="ScreenshotApp.png" />
+    <File Path="ScreenshotTaskManager1.png" />
+    <File Path="ScreenshotTaskManager2.png" />
   </Folder>
   <Project Path="WpfBindingMemoryOverflow/WpfBindingMemoryOverflow.csproj" Id="290bb328-0ae5-4738-a8c5-efd8f4f1fc0f" />
+  <Project Path="WpfBindingMemoryOverflowFixed/WpfBindingMemoryOverflowFixed.csproj" Id="c0ab7b63-31fe-42d8-87da-0f4643414d5a" />
 </Solution>

@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WpfBindingMemoryOverflowFixed.LeakyTileFixed"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="6"
+          Width="160"
+          Height="80"
+          Background="#22CCCCCC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Safe binding: Text (INPC) -->
+        <Button Content="{Binding Text}"
+                Width="80"
+                Height="24"
+                Margin="4"/>
+
+        <!-- Safe binding: TilesCount (from Window's DataContext, which is MainWindow itself) -->
+        <Label Grid.Row="1"
+               Margin="4"
+               Content="{Binding TilesCount,
+                                 RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+               ToolTip="Binding to MainWindow.TilesCount"/>
+
+        <!-- Safe binding: StrokeThickness (INPC) -->
+        <Path HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Margin="4"
+              Width="24"
+              Height="24"
+              Stroke="OrangeRed"
+              Fill="#44FF9800"
+              Data="M0,12 L12,0 24,12 12,24Z"
+              StrokeThickness="{Binding StrokeThickness}"/>
+    </Grid>
+</UserControl>
+
