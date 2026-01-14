@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WpfBindingMemoryOverflow.LeakyTile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfBindingMemoryOverflow">
+    <!-- A simple grid cell with a Button, Label, and Path. -->
+    <Grid Margin="6"
+          Width="160"
+          Height="80"
+          Background="#22CCCCCC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Button content binds to LeakyModel.Text (no INPC to intentionally leak) -->
+        <Button Content="{Binding Source={x:Static local:LeakyModel.Instance}, Path=Text}"
+                Width="80"
+                Height="24"
+                Margin="4"/>
+
+        <!-- Label binds to ancestor UniformGrid.Children.Count (non-DP/non-INPC) -->
+        <Label Grid.Row="1"
+               Margin="4"
+               Content="{Binding Path=Children.Count,
+                                 RelativeSource={RelativeSource AncestorType={x:Type UniformGrid}}}"
+               ToolTip="Binding to ancestor panel's Children.Count"/>
+
+        <!-- Path whose StrokeThickness binds to LeakyModel.StrokeThickness (no INPC) -->
+        <Path HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Margin="4"
+              Width="24"
+              Height="24"
+              Stroke="OrangeRed"
+              Fill="#44FF9800"
+              Data="M0,12 L12,0 24,12 12,24Z"
+              StrokeThickness="{Binding Source={x:Static local:LeakyModel.Instance}, Path=StrokeThickness}"/>
+    </Grid>
+</UserControl>
+

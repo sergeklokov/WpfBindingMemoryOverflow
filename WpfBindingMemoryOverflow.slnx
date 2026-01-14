@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="WpfBindingMemoryOverflow/WpfBindingMemoryOverflow.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path="ReadMe.md" />
+  </Folder>
+  <Project Path="WpfBindingMemoryOverflow/WpfBindingMemoryOverflow.csproj" Id="290bb328-0ae5-4738-a8c5-efd8f4f1fc0f" />
 </Solution>
